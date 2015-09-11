@@ -1,0 +1,85 @@
+<section style="padding: 0px 20px">
+	<h1>Detalle de Abonos por Factura:</h1>
+
+	<div class="row">
+		<div class="col-sm-6 col-md-12">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title">Información del Documento:</h3>
+				</div>
+				<div class="panel-body">
+					<div class="col-sm-4 col-md-6">
+						<h5><B style="color: #31708f">Proveedor: </b><%= @documento[0].IdProveedor %> - <%= @documento[0].Nombre %></h5>
+						<h5><B style="color: #31708f">Factura: </b><%= @documento[0].id %></h5>
+						<h5><B style="color: #31708f">Plazo en documento: </b><%= @documento[0].Plazo %></h5>
+					</div>
+					<div class="col-sm-4 col-md-6">
+						<h5><B style="color: #31708f">Fecha de Compra: </b><%= (@documento[0].Fecha).strftime("%d-%m-%Y") %></h5>
+						<h5><B style="color: #31708f">Fecha de Vencimiento: </b><%= (@documento[0].FechaVence).strftime("%d-%m-%Y") %></h5>
+						<h5><B style="color: #31708f">Status:</b>
+							<% if @status == 1 %>
+								<strong style="color: red">Vencida</strong>
+							<% else %>
+								<strong style="color: blue">En tiempo</strong>
+							<% end %>
+						</h5>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<% if @abonos.size == 0 %>
+		<div class="alert alert-danger alert-dismissible" role="alert">
+			<button type="button" class="close" data-dismiss="alert">
+				<span aria-hidden="true">&times;</span>
+				<span class="sr-only">Close</span>
+			</button>
+			<strong>Aviso!</strong> No se encontraron registros
+		</div>
+	<% else %>
+		<table class="table table-hover">
+			<thead>
+				<tr>
+					<th>Id<br>Abono</th>
+					<th>Fecha<br>Abono</th>
+					<th>Usuario<br>Realizó</th>
+					<th>Usuario<br>Autorizó</th>
+					<th class="text-right">Importe<br>Abono</th>
+					<th>Forma<br>de Pago</th>
+					<th>Concepto</th>
+				</tr>
+			</thead>
+
+			<tbody>
+				<% @abonos.each do |abono| %>
+					<tr>
+						<td><%= abono.id %></td>
+						<td><%= (abono.Fecha).strftime("%d-%m-%Y") %></td>
+						<td><%= abono.Realiza %></td>
+						<td><%= abono.Autoriza %></td>
+						<td class="text-right"><%= number_to_currency(abono.Monto, unit: "$ ") %></td>
+						<td><%= abono.Forma_Pago %></td>
+						<td><%= abono.Referencia %></td>
+					</tr>
+				<% end %>
+			</tbody>
+		</table>
+		<div class="row">
+			<div class="col-sm-6 col-md-4"></div>
+			<div class="col-sm-6 col-md-4"></div>
+			<div class="col-sm-6 col-md-4">
+				<div class="col-sm-4 col-md-6">
+					<h4><B style="color: #31708f">Total factura: </b></h4>
+					<h4><B style="color: #31708f">Total abonos: </b></h4>
+					<h4><B style="color: #31708f">Saldo actual: </b></h4>
+				</div>
+				<div class="col-sm-4 col-md-6">
+					<h4 class="text-right"><%= number_to_currency(@documento[0].SumaDeImporte, unit: "$ ") %></h4>
+					<h4 class="text-right"><%= number_to_currency(@total_abonos, unit: "$ ") %></h4>
+					<h4 class="text-right"><%= number_to_currency(@saldo_actual, unit: "$ ") %></h4>
+				</div>
+			</div>
+		</div>
+	<% end %>
+</section>

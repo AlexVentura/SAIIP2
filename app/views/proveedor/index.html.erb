@@ -1,0 +1,30 @@
+<section style="padding: 0px 20px">
+	<h1>Facturas por Proveedor</h1>
+	<p>Ingrese código del Proveedor y pulse el botón <B><I>Procesar</i></b></p>
+	
+	<%= form_tag({controller: "proveedor", action: "listarFacturas"}, method: "post") do %>
+		<div class="row">
+			<div class="col-lg-4">
+				<div class="input-group">
+					
+					<%#= text_field_tag 'idproveedorTxt', '', maxlength: 3, size: 20, placeholder: 'Código Proveedor', required: 'required', class: 'form-control' %>
+
+					<%= number_field_tag 'idproveedorNum', nil, min: 1, max: 999, step: 1, placeholder: 'Código Proveedor', class: 'form-control' %>
+					
+					<span class="input-group-btn">
+						<%= submit_tag 'Procesar', class: 'btn btn-info' %>
+						<%= link_to 'Mostrar todos', {controller: "proveedor", action: "listarFacturas"}, class: "btn btn-primary" %>
+					</span>
+				</div><!-- /input-group -->
+			</div><!-- /.col-lg-6 -->
+		</div><!-- /.row -->
+	<% end %>
+
+	<!-- Rendereamos el Partial -->
+	<%= render 'facturas_tabla' %>
+
+	<!-- Input que solo acepta Números -->
+	<%#= label_tag 'código', 'Código de usuario' %>
+	<!-- <input type="text" class="form-control" maxlength="3" onKeypress="if (event.keyCode < 45 || event.keyCode > 57) event.returnValue = false;" placeholder="Código Proveedor"> -->
+	<%#= link_to 'Procesar', proveedores_filtro_path(id: 7), class: "btn btn-info" %>	
+</section>

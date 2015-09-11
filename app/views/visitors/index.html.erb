@@ -1,2 +1,7 @@
-<h3>Welcome</h3>
-<p><%= link_to 'Users:', users_path %> <%= User.count %> registered</p>
+<%= content_tag(:h1, 'Bienvenido a SAIIP - Crédito y Cobranza', class: nil) %>
+<!-- <div><%= link_to 'Users:', users_path %> <%= User.count %> registered</div> -->
+<% content_tag(:div, content_tag(:p, 'Hello world!', :class=>nil), class: 'strong') %>
+
+<%= content_tag(:div,
+	image_tag('official_logo_tr.png', class: 'menu_icon'), class: 'logo')
+%>

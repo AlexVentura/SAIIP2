@@ -1,8 +1,28 @@
 <%# add navigation links to this file %>
 <% if user_signed_in? %>
-  <li><%= link_to 'Edit account', edit_user_registration_path %></li>
-  <li><%= link_to 'Sign out', destroy_user_session_path, :method=>'delete' %></li>
+    <!-- <li><%= link_to 'Edit account', edit_user_registration_path %></li> -->
+
+    <li class="dropdown">
+    	<a href="#" class="dropdown-toggle" data-toggle="dropdown">Cartera de Clientes <span class="caret"></span></a>
+        <ul class="dropdown-menu" role="menu">
+            <li><%= link_to 'Facturas por Cliente', cxc_path %></li>
+        	<li class="divider"></li>
+            <li><%= link_to 'Valuación de Cartera', cxc_valuacion_path, method: :get %></li>
+      	</ul>
+	</li>
+
+	<li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Cartera de Proveedores <span class="caret"></span></a>
+      	<ul class="dropdown-menu" role="menu">
+            <%= content_tag(:li, link_to('Facturas por Proveedor', cxp_path), class: nil) %>
+            <%= content_tag(:li, '', class: 'divider') %>
+            <%= content_tag(:li, link_to('Valuación de Cartera', cxp_valuacion_path, method: :get), class: nil) %>
+      	</ul>
+	</li>
+
+	<li><%= link_to 'Cerrar Sesión', destroy_user_session_path, :method=>'delete', data: { confirm: '¿ Esta seguro de terminar su sesión ?' } %></li>
+
 <% else %>
-  <li><%= link_to 'Sign in', new_user_session_path %></li>
-  <li><%= link_to 'Sign up', new_user_registration_path %></li>
+    <li><%= link_to 'Iniciar Sesión', new_user_session_path %></li>
+	<li><%= link_to 'Registrarse', new_user_registration_path %></li>
 <% end %>

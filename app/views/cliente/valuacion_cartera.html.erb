@@ -1,0 +1,20 @@
+<section style="padding: 0px 20px">
+	<h1>Valuación de Cartera de Clientes:</h1>
+
+	<div class="row">
+		<div class="col-sm-6 col-md-4">
+			
+		</div>
+		<div class="col-sm-6 col-md-4">
+			<div class="panel panel-primary">
+				<div class="panel-heading">
+					<h3 class="panel-title">Al día de hoy, <%= (Time.now).strftime("%d-%m-%y") %> :</h3>
+				</div>
+				<div class="panel-body">
+					<h3><B style="color: #428bca">Saldo Total: </b><strong style="color: black"><%= number_to_currency(@total_valuacion, unit: "$ ") %></strong></h3>
+					<h3><B style="color: #428bca">No. de Facturas: </b><strong style="color: black"><%= @total_facturas %></strong></h3>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

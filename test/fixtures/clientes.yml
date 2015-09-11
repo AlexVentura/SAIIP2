@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  Nombre: MyString
+  Direccion: MyString
+  Ciudad: MyString
+  Estado: MyString
+  CP: MyString
+  Telefono: MyString
+  RFC: MyString
+  TCuenta: MyString
+  Plazo: 1
+  Limite: 1.5
+  Status: MyString
+
+two:
+  Nombre: MyString
+  Direccion: MyString
+  Ciudad: MyString
+  Estado: MyString
+  CP: MyString
+  Telefono: MyString
+  RFC: MyString
+  TCuenta: MyString
+  Plazo: 1
+  Limite: 1.5
+  Status: MyString

@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  IdVenta: 1
+  IdCaja: 1
+  IdProducto: 1
+  Cantidad: 1
+  Precio_Unitario: 1.5
+  Desc_Unitario: 1.5
+  Desc_Total: 1.5
+  Costo_Total: 1.5
+  Impuesto_Total: 1.5
+  Importe_Total: 1.5
+  Exento: false
+
+two:
+  IdVenta: 1
+  IdCaja: 1
+  IdProducto: 1
+  Cantidad: 1
+  Precio_Unitario: 1.5
+  Desc_Unitario: 1.5
+  Desc_Total: 1.5
+  Costo_Total: 1.5
+  Impuesto_Total: 1.5
+  Importe_Total: 1.5
+  Exento: false

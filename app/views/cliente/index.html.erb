@@ -1,0 +1,24 @@
+<section style="padding: 0px 20px">
+	<h1>Facturas por Cliente</h1>
+	<p>Ingrese código del Cliente y pulse el botón <B><I>Procesar</i></b></p>
+	
+	<%= form_tag({controller: "cliente", action: "listarFacturas"}, method: "post") do %>
+		<div class="row">
+			<div class="col-lg-4">
+				<div class="input-group">
+
+					<%= number_field_tag 'idClienteNum', nil, min: 1, max: 999, step: 1, placeholder: 'Código Cliente', class: 'form-control' %>
+					
+					<span class="input-group-btn">
+						<%= submit_tag 'Procesar', class: 'btn btn-info' %>
+						<%= link_to 'Mostrar todos', {controller: "cliente", action: "listarFacturas"}, class: "btn btn-primary" %>
+					</span>
+
+				</div><!-- /input-group -->
+			</div><!-- /.col-lg-6 -->
+		</div><!-- /.row -->
+	<% end %>
+
+	<!-- Rendereamos el Partial -->
+	<%= render 'facturas_tabla' %>
+</section>

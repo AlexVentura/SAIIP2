@@ -1,20 +1,59 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= content_for?(:title) ? yield(:title) : "Saiip2" %></title>
-    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Saiip2" %>">
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-    <%= csrf_meta_tags %>
-  </head>
-  <body>
-    <header>
-      <%= render 'layouts/navigation' %>
-    </header>
-    <main role="main">
-       <%= render 'layouts/messages' %>
-       <%= yield %>
-    </main>
-  </body>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title><%= content_for?(:title) ? yield(:title) : "SAIIP" %></title>
+        <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "SAIIP" %>">
+        <meta name="Alejandro Ventura" content=”goResponsive”>
+        <%= stylesheet_link_tag 'application', 'font-awesome.min', media: 'all', 'data-turbolinks-track' => true %>
+        <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+        <%= csrf_meta_tags %>
+    </head>
+    <body>
+        <div class="wrapper">
+            <div class="content">
+                <header>
+                    <%= render 'layouts/navigation' %>
+                </header>
+                <main role="main">
+                    <%= render 'layouts/messages' %>
+                    <% content_tag(:i, 'Prueba', class: 'fa fa-home') %>
+                    <%= yield %>
+                </main>
+            </div>
+            <footer class="footer">
+                <div class="websiteFooter">
+                    <section class="footerContent">
+                        <div class="shortInfo">
+                            © 2014 Alejandro Ventura, <a href="http://lenguajemx.com">LenguajeMX</a>.<br/>
+                            Desarrolado en <a href="http://rubyonrails.org/">Ruby on Rails</a> con <a href="https://www.apple.com/mx/macbook-pro/">Apple Computer</a>.<br/>
+                            Utilizando <a href="http://azure.microsoft.com/es-es/">Azure Cloud</a> como alojamiento.
+                        </div>
+                        <ul class="socialIcons">
+                            <li>
+                                <a href="http://mx.linkedin.com/pub/alejandro-ventura/a6/271/151">
+                                    <img class="icon" src="/assets/sm/grey/google+.png" alt="">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.facebook.com/alex.covent">
+                                    <img class="icon" src="/assets/sm/grey/facebook.png" alt="">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://twitter.com/Lexynux">
+                                    <img class="icon" src="/assets/sm/grey/twitter.png" alt="">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://github.com/AlexVentura">
+                                    <img class="icon" src="/assets/sm/grey/skype.png" alt="">
+                                </a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+            </footer>
+        </div>
+    </body>
 </html>

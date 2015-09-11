@@ -1,0 +1,37 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  IdVenta: 1
+  IdCaja: 1
+  Fac_Tipo: 1
+  Fac_Cajero: 1
+  Fac_Vendedor: 1
+  Cliente: 1
+  Fecha: 2014-11-22
+  Hora: 2014-11-22 14:08:58
+  Status: MyString
+  Efectivo: 1.5
+  Tarjeta: 1.5
+  Cheque: 1.5
+  Vales: 1.5
+  Cupones: 1.5
+  Motivo: 1
+  Apertura: 1
+
+two:
+  IdVenta: 1
+  IdCaja: 1
+  Fac_Tipo: 1
+  Fac_Cajero: 1
+  Fac_Vendedor: 1
+  Cliente: 1
+  Fecha: 2014-11-22
+  Hora: 2014-11-22 14:08:58
+  Status: MyString
+  Efectivo: 1.5
+  Tarjeta: 1.5
+  Cheque: 1.5
+  Vales: 1.5
+  Cupones: 1.5
+  Motivo: 1
+  Apertura: 1

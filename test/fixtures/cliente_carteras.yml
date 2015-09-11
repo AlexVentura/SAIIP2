@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  IdCliente: 1
+  IdDocumento: 1
+  Fecha: 2014-11-22
+  Hora: 2014-11-22 13:55:15
+  Realiza: MyString
+  Autoriza: MyString
+  Monto: 1.5
+  Forma_pago: MyString
+  Referencia: MyString
+
+two:
+  IdCliente: 1
+  IdDocumento: 1
+  Fecha: 2014-11-22
+  Hora: 2014-11-22 13:55:15
+  Realiza: MyString
+  Autoriza: MyString
+  Monto: 1.5
+  Forma_pago: MyString
+  Referencia: MyString
