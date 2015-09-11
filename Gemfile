@@ -23,6 +23,12 @@ group :development do
   gem 'rails_layout'
 end
 
-group :production do
-    gem 'unicorn'
+group :development do
+    gem 'capistrano', '~> 3.4.0'
+    gem 'capistrano-bundler', '~> 1.1.4'
+    gem 'capistrano-rails', '~> 1.1.3'
+
+    # Add this if you're using rvm
+    # gem 'capistrano-rvm', github: "capistrano/rvm"
+    gem 'capistrano-rvm', '~> 0.1.2'
 end
