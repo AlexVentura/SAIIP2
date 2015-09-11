@@ -19,11 +19,10 @@ require 'capistrano/deploy'
 # If you are using rvm add these lines:
 require 'capistrano/rvm'
 set :rvm_type, :user
-set :rvm_ruby_version, '2.1.3p242'
+set :rvm_ruby_version, '2.1.3'
 
 require 'capistrano/bundler'
 require 'capistrano/rails'
-# require 'capistrano/passenger'
 
 # require 'capistrano/rbenv'
 # require 'capistrano/chruby'

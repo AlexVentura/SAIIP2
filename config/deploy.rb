@@ -2,7 +2,8 @@
 lock '3.4.0'
 
 set :application, 'SAIIP2'
-set :repo_url, 'git@github.com:AlexVentura/SAIIP2.git'
+# set :repo_url, 'git@github.com:AlexVentura/SAIIP2.git'
+set :repo_url, 'https://github.com/AlexVentura/SAIIP2.git'
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
